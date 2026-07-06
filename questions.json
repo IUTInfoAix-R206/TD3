@@ -1,0 +1,623 @@
+{
+  "formatVersion": 1,
+  "tdId": "r2.06-td3",
+  "tdLabel": "R2.06 - TD3",
+  "title": "",
+  "intro": "",
+  "database": {
+    "name": "gestion-pedagogique",
+    "schemaFile": "data/schema.sql",
+    "insertFile": "data/insert.sql"
+  },
+  "canon": {
+    "algo": "sha256",
+    "specVersion": 1
+  },
+  "sections": [
+    {
+      "name": "Expression des jointures",
+      "items": [
+        {
+          "type": "instruction",
+          "text": "Quand cela possible, formulez les requêtes suivantes de trois manières différentes."
+        },
+        {
+          "type": "question",
+          "id": "q1",
+          "num": "1",
+          "statement": "Donnez, pour l'étudiant Stéphane Rocchi, les moyennes de test obtenues par ordre décroissant avec le code du module associé.",
+          "expectedCols": 2,
+          "expectedRows": 9,
+          "expectedLabel": "2 attributs, 9 tuples",
+          "orderSensitive": true,
+          "hashesSorted": [
+            "bfa80236b310e1c0c64021c7df4d4800d77883d02324a9fdaa2545963fddb676"
+          ],
+          "hashOrdered": "d95575e6b2b542b7af878f661d44682a41a5d09576ca35c140cc80623aae36a2",
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "sélection",
+            "tri"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q2",
+          "num": "2",
+          "statement": "Donnez les codes et libellés des modules enseignés par Didier Boitard.",
+          "expectedCols": 2,
+          "expectedRows": 2,
+          "expectedLabel": "2 attributs, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "e00c4077d32ac85c808dec66cd2cd7359717b0f5b43ced8c0380bd1ee0156032"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "distinct"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q3",
+          "num": "3",
+          "statement": "Quels sont les groupes de seconde année pour lesquels Marc Laporte a effectué un enseignement ?",
+          "expectedCols": 1,
+          "expectedRows": 2,
+          "expectedLabel": "1 attribut, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "eb653a65610095b6406cacfd76032069435d5594ba92d2ed9e8f68eb0d0af7f6"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "sélection",
+            "distinct"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q4",
+          "num": "4",
+          "statement": "Donnez les numéros et, par ordre alphabétique, les noms des étudiants ayant suivi un enseignement effectué par un professeur, par ailleurs responsable d'un module quelconque.",
+          "expectedCols": 2,
+          "expectedRows": 18,
+          "expectedLabel": "2 attributs, 18 tuples",
+          "orderSensitive": true,
+          "hashesSorted": [
+            "aac3df7addfcbdb2f57e2c8f51db4c91abaf2f5e4bd01fc86402e1a66ab75e01"
+          ],
+          "hashOrdered": "f961d035235bff28bc36874694a3cdb79813f47bf4d8ae986cb36768bb037dcf",
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "tri",
+            "distinct"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q5",
+          "num": "5",
+          "statement": "Donnez les numéros et, par ordre alphabétique, les noms des étudiants ayant suivi un enseignement effectué par le professeur responsable de ce module.",
+          "expectedCols": 2,
+          "expectedRows": 12,
+          "expectedLabel": "2 attributs, 12 tuples",
+          "orderSensitive": true,
+          "hashesSorted": [
+            "c8b6cfbd954aac9280065cbee870d0e2870e5c74018834be437b8f34a9626ca8"
+          ],
+          "hashOrdered": "d5b37d42f7c98add378da7ba554cb692e226eab9567a86ab6a56214c0e110249",
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "tri",
+            "distinct"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Formulation de calculs verticaux et horizontaux",
+      "items": [
+        {
+          "type": "instruction",
+          "text": "Formulez les requêtes suivantes, en veillant particulièrement à l'évaluation des valeurs nulles pour les calculs horizontaux."
+        },
+        {
+          "type": "question",
+          "id": "q6",
+          "num": "6",
+          "statement": "Combien y-a-t-il de professeurs ?",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (17)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "90879f6573e85899f746c56fac743abd8838afba7eda7b1238dba3fd53b41fa1"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "calcul-vertical"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q7",
+          "num": "7",
+          "statement": "Quelle est la moyenne générale des notes de contrôle continu pour le module de code PRL ?",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (9.7)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "ce96f0a4d5ef18f7c532672ca05eb74c7a1d8339437b6821616b4aa79be5c2e3"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "calcul-vertical",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q8",
+          "num": "8",
+          "statement": "Combien de professeurs ont donné un enseignement à l'étudiant Philippe Lyon ?",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (7)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "a00ecf8248967918d8dfad9134c2a2c384e3f0fbeb0334bb65c65bdcbba8e341"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "calcul-vertical",
+            "distinct"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q9",
+          "num": "9",
+          "statement": "Donnez, pour le module Prolog, la note moyenne obtenue par les étudiants en tenant compte des coefficients de contrôle continu et de test.",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (10.66)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "a4435e26488396714c42dca0cd7b57e40c86bcef725ba29351d6db27de42d911"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "calcul-vertical",
+            "null"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q10",
+          "num": "10",
+          "statement": "Quel est le coefficient de test le plus faible ?",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (0)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "e3701a0ef3f8312c436aa410431e6cc41bb12ec951d2af0a079c7a3e75490159"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "calcul-vertical"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q11",
+          "num": "11",
+          "statement": "Quels sont les libellés des modules dont le coefficient de test est le plus faible ? Proposer deux formulations différentes de cette requête.",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (ETUDE DE CAS 1)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "390a3fb0d823fcfe22f2f11a173d649cdd03736cd61445a2e28bb98984f54aba"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "imbrication",
+            "calcul-vertical",
+            "extrémum"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q12",
+          "num": "12",
+          "statement": "En supposant que tous les modules sont de même importance, donnez la moyenne générale de l'étudiante Sandrine Levy.",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (11.13)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "80c2a6cbe638b1ecff2563e419f5f6bf52b10ab2ee85b566ec41f94fc2f718d4"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "calcul-vertical",
+            "null"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q13",
+          "num": "13",
+          "statement": "Quels sont les codes des modules pour lesquels la meilleure note de test a été obtenue ?",
+          "expectedCols": 1,
+          "expectedRows": 2,
+          "expectedLabel": "1 attribut, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "c3d21f0d70455cc31ce223f5e2487a21b823935e5a69fbe6c568166b1f37d182"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "imbrication",
+            "calcul-vertical",
+            "extrémum"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q14",
+          "num": "14",
+          "statement": "Quels sont les numéros et noms des étudiants qui ont obtenu, tous modules confondus, la meilleure note de test ? Proposer deux formulations différentes de cette requête.",
+          "expectedCols": 2,
+          "expectedRows": 2,
+          "expectedLabel": "2 attributs, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "08a882b21ffde9e5cfcc39c2681745060b70889b95b63bcdcb4b08878f3ee3e3"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "calcul-vertical",
+            "extrémum",
+            "null"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Utilisation des opérateurs ensemblistes",
+      "items": [
+        {
+          "type": "question",
+          "id": "q15",
+          "num": "15",
+          "statement": "Donnez les villes de résidence des étudiants et des professeurs.",
+          "expectedCols": 1,
+          "expectedRows": 6,
+          "expectedLabel": "1 attribut, 6 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "093f99bf837abedb1f41b12d5f922f8d6c57d1dc3c1b2272834779f2b71468dc"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "union",
+            "null"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q16",
+          "num": "16",
+          "statement": "Quels sont les numéros des professeurs responsables d'un module qu'ils enseignent ainsi que le code du module correspondant ?",
+          "expectedCols": 2,
+          "expectedRows": 4,
+          "expectedLabel": "2 attributs, 4 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "ef261deb502c33fe7f45d1cddb20b3e7c2294dfea51bbdb7b60872140b656a43"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "intersection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q17",
+          "num": "17",
+          "statement": "Donnez les libellés des modules ne correspondant à la spécialité d'aucun professeur.",
+          "expectedCols": 1,
+          "expectedRows": 23,
+          "expectedLabel": "1 attribut, 23 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "8622f61f058e2941bbb97aeb9b81a1ae600e5b82f7125e972730e7f6c8bb2cbb"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "anti-jointure",
+            "différence",
+            "imbrication"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Équivalent des opérateurs ensemblistes",
+      "items": [
+        {
+          "type": "instruction",
+          "text": "Proposez une nouvelle formulation des requêtes de la section précédente sans faire appel aux opérateurs ensemblistes."
+        },
+        {
+          "type": "question",
+          "id": "q18",
+          "num": "18",
+          "statement": "Quels sont les numéros des professeurs responsables d'un module qu'ils enseignent ainsi que le code du module correspondant ?",
+          "expectedCols": 2,
+          "expectedRows": 4,
+          "expectedLabel": "Q16, 2 attributs, 4 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "ef261deb502c33fe7f45d1cddb20b3e7c2294dfea51bbdb7b60872140b656a43"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "distinct",
+            "exists"
+          ],
+          "sameAs": "q16"
+        },
+        {
+          "type": "question",
+          "id": "q19",
+          "num": "19",
+          "statement": "Donnez les libellés des modules ne correspondant à la spécialité d'aucun professeur.",
+          "expectedCols": 1,
+          "expectedRows": 23,
+          "expectedLabel": "Q17, 1 attribut, 23 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "8622f61f058e2941bbb97aeb9b81a1ae600e5b82f7125e972730e7f6c8bb2cbb"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "anti-jointure",
+            "imbrication",
+            "not-exists",
+            "jointure-externe",
+            "null"
+          ],
+          "sameAs": "q17"
+        }
+      ]
+    },
+    {
+      "name": "Test d'absence de données",
+      "items": [
+        {
+          "type": "instruction",
+          "text": "Formulez les requêtes suivantes de trois manières différentes, sans utiliser d'opérateur ensembliste."
+        },
+        {
+          "type": "question",
+          "id": "q20",
+          "num": "20",
+          "statement": "Donnez les numéros, noms et prénoms des étudiants n'ayant aucune note.",
+          "expectedCols": 3,
+          "expectedRows": 27,
+          "expectedLabel": "3 attributs, 27 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "8377fd37cc7a9673f8f3d172aa4d4f3ae6e22c7ce1776960c4f3a77dd75b821a"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "anti-jointure",
+            "imbrication",
+            "not-exists",
+            "jointure-externe"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q21",
+          "num": "21",
+          "statement": "Quels sont les noms et prénoms des étudiants n'ayant eu aucun enseignement de Marc Laporte ?",
+          "expectedCols": 2,
+          "expectedRows": 41,
+          "expectedLabel": "2 attributs, 41 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "3d4b358720fc868a426a2b3ea3805b22068cd15d950dfd1b2e158b0f4659db7f"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "anti-jointure",
+            "imbrication",
+            "not-exists",
+            "jointure-externe",
+            "cte"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q22",
+          "num": "22",
+          "statement": "Quels sont les noms et prénoms des professeurs n'étant pas responsables de modules ?",
+          "expectedCols": 2,
+          "expectedRows": 8,
+          "expectedLabel": "2 attributs, 8 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "515363d109cb01f52b8d90e3443d8edff8dd6d6fbea46a68590f585b133ee1ad"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "anti-jointure",
+            "imbrication",
+            "not-exists",
+            "jointure-externe",
+            "null"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Expression des partitionnements",
+      "items": [
+        {
+          "type": "question",
+          "id": "q23",
+          "num": "23",
+          "statement": "Donnez, par groupe de seconde année, le nombre d'étudiants.",
+          "expectedCols": 2,
+          "expectedRows": 5,
+          "expectedLabel": "2 attributs, 5 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "05c196ce710a6c0f8bae749e97a2ebaf47005d2c1ba23621630f9dbc22066786"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "groupement",
+            "calcul-vertical",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q24",
+          "num": "24",
+          "statement": "Donnez, pour chaque numéro d'étudiant, la meilleure note de test.",
+          "expectedCols": 2,
+          "expectedRows": 29,
+          "expectedLabel": "2 attributs, 29 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "f3a046a56e225a0e569b99023147fb216e019bba201152c0d37ab038eeea2acb"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "groupement",
+            "calcul-vertical"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q25",
+          "num": "25",
+          "statement": "Donnez, pour chaque numéro et nom des étudiants de seconde année ainsi que pour chaque code de module, le nombre de professeurs.",
+          "expectedCols": 4,
+          "expectedRows": 71,
+          "expectedLabel": "4 attributs, 71 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "3abf93030a30c554a171f1f4259bf71f4f31a0a0dc18d5caf7ef29fd3496bdec"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "groupement",
+            "calcul-vertical",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q26",
+          "num": "26",
+          "statement": "Donnez, pour chaque ville de plus de cinq professeurs, le nombre de professeurs y résidant.",
+          "expectedCols": 2,
+          "expectedRows": 2,
+          "expectedLabel": "2 attributs, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "aa15b54d06397ee1d1716363a8b8bc661a3edd50d43a11df7ae06be9e9b8d980"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "groupement",
+            "calcul-vertical"
+          ],
+          "sameAs": null
+        }
+      ]
+    }
+  ],
+  "subjectPdf": "sujet.pdf"
+}
