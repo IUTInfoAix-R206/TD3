@@ -2,8 +2,8 @@
   "formatVersion": 1,
   "tdId": "r2.06-td3",
   "tdLabel": "R2.06 - TD3",
-  "title": "",
-  "intro": "",
+  "title": "Requêtes avec SQL",
+  "intro": "Formulez, en SQL, sur la base de données exemple, les requêtes d'interrogation suivantes.",
   "database": {
     "name": "gestion-pedagogique",
     "schemaFile": "data/schema.sql",
