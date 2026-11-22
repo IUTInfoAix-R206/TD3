@@ -1,4 +1,4 @@
-# R2.06 - TD3 - Requêtes avec SQL
+# R2.06 - TD3 - Interrogations en SQL
 
 TD de bases de données de l'IUT d'Aix-Marseille (ressource R2.06, Exploitation d'une base de données).
 
